@@ -1,0 +1,37 @@
+---
+import { site } from '../data/site';
+const serviceOptions = [
+  'Websites',
+  'Starter automation',
+  'Starter website',
+  'Monthly admin plan',
+  'Not sure yet',
+];
+---
+<form class="contact-form" action="/api/contact" method="post">
+  <div class="field">
+    <label for="cf-name">Your name</label>
+    <input id="cf-name" name="name" type="text" autocomplete="name" required maxlength="100" />
+  </div>
+  <div class="field">
+    <label for="cf-contact">Email or WhatsApp number</label>
+    <input id="cf-contact" name="contact" type="text" autocomplete="email" required maxlength="100" />
+  </div>
+  <div class="field">
+    <label for="cf-service">What do you need?</label>
+    <select id="cf-service" name="service">
+      {serviceOptions.map((option) => <option value={option}>{option}</option>)}
+    </select>
+  </div>
+  <div class="field">
+    <label for="cf-message">Tell us about it</label>
+    <textarea id="cf-message" name="message" rows="5" required maxlength="2000"></textarea>
+  </div>
+  <div class="hp" aria-hidden="true">
+    <label>Leave this field empty<input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
+  </div>
+  {site.turnstileSiteKey && <div class="cf-turnstile" data-sitekey={site.turnstileSiteKey}></div>}
+  <button class="btn btn-amber" type="submit">Send message</button>
+  <p class="fine">We reply within {site.replyTime}.</p>
+</form>
+{site.turnstileSiteKey && <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}

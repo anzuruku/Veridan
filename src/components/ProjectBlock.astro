@@ -1,0 +1,30 @@
+---
+import type { Project } from '../data/projects';
+const { project } = Astro.props as { project: Project };
+---
+<article class="project">
+  <div class="project-intro">
+    <h3>{project.name}</h3>
+    <p class="status">{project.status}</p>
+    <p>{project.summary}</p>
+    {project.url && <p><a href={project.url}>Open {project.name}</a></p>}
+  </div>
+  <div>
+    <ul>
+      {project.facts.map((fact) => <li>{fact}</li>)}
+    </ul>
+    {project.failover && (
+      <div class="failover">
+        <p>{project.failover.label}</p>
+        <div class="chain" aria-label={project.failover.steps.join(', then ')}>
+          {project.failover.steps.map((step, i) => (
+            <>
+              {i > 0 && <span class="join" aria-hidden="true"></span>}
+              <span class="step">{step}</span>
+            </>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</article>

@@ -1,0 +1,18 @@
+---
+import { site } from '../data/site';
+---
+<a class="logo" href="/" aria-label={`${site.name}, home`}>
+  <svg viewBox="500 165 530 380" width="44" height="32" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="xTL" gradientUnits="userSpaceOnUse" x1="507" y1="176" x2="790" y2="344"><stop offset="0" stop-color="#ffa400"/><stop offset="0.6" stop-color="#ff5f00"/><stop offset="1" stop-color="#b53200"/></linearGradient>
+      <linearGradient id="xBL" gradientUnits="userSpaceOnUse" x1="508" y1="535" x2="770" y2="353"><stop offset="0" stop-color="#ffa400"/><stop offset="0.6" stop-color="#ff5f00"/><stop offset="1" stop-color="#b53200"/></linearGradient>
+      <linearGradient id="xTR" gradientUnits="userSpaceOnUse" x1="1023" y1="176" x2="740" y2="344"><stop offset="0" stop-color="#00d4dc"/><stop offset="0.6" stop-color="#0aa0b8"/><stop offset="1" stop-color="#0a6f8c"/></linearGradient>
+      <linearGradient id="xBR" gradientUnits="userSpaceOnUse" x1="1022" y1="535" x2="760" y2="353"><stop offset="0" stop-color="#00d4dc"/><stop offset="0.6" stop-color="#0aa0b8"/><stop offset="1" stop-color="#0a6f8c"/></linearGradient>
+    </defs>
+    <path d="M 530 176 H 585 Q 603 176 616 188 L 758 316 Q 772 328 792 344 H 700 Q 660 344 628 322 L 524 240 Q 506 226 507 205 Q 508 176 530 176 Z" fill="url(#xTL)"/>
+    <path d="M 1000 176 H 945 Q 927 176 914 188 L 772 316 Q 758 328 738 344 H 830 Q 870 344 902 322 L 1006 240 Q 1024 226 1023 205 Q 1022 176 1000 176 Z" fill="url(#xTR)"/>
+    <path d="M 508 486 Q 506 500 512 514 Q 520 532 540 535 H 572 Q 586 535 598 524 L 756 380 Q 766 370 780 353 H 700 Q 660 353 630 375 L 520 470 Q 508 478 508 486 Z" fill="url(#xBL)"/>
+    <path d="M 1022 486 Q 1024 500 1018 514 Q 1010 532 990 535 H 958 Q 944 535 932 524 L 774 380 Q 764 370 750 353 H 830 Q 870 353 900 375 L 1010 470 Q 1022 478 1022 486 Z" fill="url(#xBR)"/>
+  </svg>
+  <span>{site.shortName} <span class="logo-sub">{site.name.replace(site.shortName, '').trim()}</span></span>
+</a>

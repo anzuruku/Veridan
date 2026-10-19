@@ -1,0 +1,51 @@
+---
+import { site } from '../data/site';
+import { services } from '../data/services';
+import { products } from '../data/products';
+const year = new Date().getFullYear();
+const liveServices = services.filter((s) => s.status === 'live');
+const liveProducts = products.filter((p) => p.status === 'live');
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <p class="fbrand">{site.name}</p>
+        <p class="fmute">{site.location}</p>
+      </div>
+      <nav aria-label="Services">
+        <h2 class="fhead">Services</h2>
+        <ul>
+          {liveServices.map((s) => <li><a href="/services/">{s.name}</a></li>)}
+        </ul>
+      </nav>
+      {liveProducts.length > 0 && (
+        <nav aria-label="Products">
+          <h2 class="fhead">Products</h2>
+          <ul>
+            {liveProducts.map((p) => <li><a href={`/products/${p.slug}`}>{p.name}</a></li>)}
+          </ul>
+        </nav>
+      )}
+      <nav aria-label="Company">
+        <h2 class="fhead">Company</h2>
+        <ul>
+          {site.nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="fhead">Contact</h2>
+        <ul>
+          {site.email && <li><a href={`mailto:${site.email}`}>{site.email}</a></li>}
+          {site.whatsapp && <li><a href={`https://wa.me/${site.whatsapp}`}>WhatsApp</a></li>}
+          <li>Reply within {site.replyTime}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbottom">
+      <p>&copy; {year} {site.name}. {site.location}</p>
+      <p><a href="/privacy">Privacy</a><a href="/terms">Terms</a></p>
+    </div>
+  </div>
+</footer>
