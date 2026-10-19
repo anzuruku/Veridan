@@ -4,7 +4,7 @@
 export const site = {
   name: 'Veridan Digital',
   shortName: 'Veridan',
-  url: 'https://crossbeamdigital.pages.dev', // the live address, no trailing slash. Update when the domain changes.
+  url: 'https://veridandigital.pages.dev', // the live address, no trailing slash. Update when the domain changes.
   headline: "Websites, AI agents and automation that keep working when the network doesn't.",
   subhead:
     'Veridan Digital is a small remote team. We build, launch and run the online side of your business, from your website to an assistant that answers customers while you are offline.',
