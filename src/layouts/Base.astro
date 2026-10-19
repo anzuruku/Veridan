@@ -1,0 +1,67 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../data/site';
+
+const { title = `${site.name} | Websites, AI agents and automation`, description = site.description, path = '/', noindex = false } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0f172a" />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={`${site.url}${path}`} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={`${site.url}${path}`} />
+    <meta property="og:image" content={`${site.url}/og-banner.png`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Veridan Digital logo: VERIDAN DIGITAL, build. automate. scale." />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'ProfessionalService',
+      name: site.name,
+      url: `${site.url}/`,
+      email: site.email || undefined,
+      description: site.description,
+      address: { '@type': 'PostalAddress', addressCountry: 'UG' },
+      founder: { '@type': 'Person', name: site.founder },
+    })} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={`${site.url}/og-banner.png`} />
+    <style is:global>
+      .eyebrow {
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #51617d;
+        margin: 0 0 0.75rem;
+      }
+      .best-for {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #c2410c;
+        margin: 0.25rem 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <Header />
+    <main id="main"><slot /></main>
+    <Footer />
+  </body>
+</html>
