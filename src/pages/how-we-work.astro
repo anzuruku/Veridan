@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+<Base
+  title={`How we work | ${site.name}`}
+  description="Four steps from brief to launch, with payment split across milestones."
+  path="/how-we-work/"
+>
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h1>How we work</h1>
+        <p>Four steps, with payment split across milestones so you pay as work is delivered.</p>
+      </div>
+      <ol class="steps">
+        {site.process.map((step) => (
+          <li>
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap cta-inner">
+      <h2>Ready to start?</h2>
+      <p>We reply within {site.replyTime}.</p>
+      <div class="actions">
+        <a class="btn btn-amber" href="/contact/">Contact us</a>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+import { team } from '../data/team';
+---
+<Base
+  title={`About | ${site.name}`}
+  description="Who we are: a small remote team of developers, designers and operations people."
+  path="/about/"
+>
+  <section class="about">
+    <div class="wrap about-grid">
+      <div class="about-copy">
+        <h1>We work alongside you, not just for you.</h1>
+        <p>
+          {site.name} is a remote team of developers, designers and operations people. Small businesses often need
+          three different freelancers to launch one website. We bring those skills together, so you deal with one team
+          and one plan.
+        </p>
+        <p class="partners">
+          You always know the person responsible for your work, and the founder answers for every result.
+        </p>
+      </div>
+      <div>
+        {team.map((member) => (
+          <div class="person">
+            <h2>{member.name}</h2>
+            <p class="role">{member.role}</p>
+            <p>{member.bio}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap cta-inner">
+      <h2>Want to work with us?</h2>
+      <div class="actions">
+        <a class="btn btn-amber" href="/contact/">Contact us</a>
+      </div>
+    </div>
+  </section>
+</Base>

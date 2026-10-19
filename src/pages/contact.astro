@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { site } from '../data/site';
+---
+<Base
+  title={`Contact | ${site.name}`}
+  description="Tell us about your project. We reply within one working day."
+  path="/contact/"
+>
+  <section id="contact" class="cta">
+    <div class="wrap cta-inner">
+      <h1>Tell us what you want to build.</h1>
+      <p>Tell us about your project. We reply within {site.replyTime}.</p>
+      <p>To help us reply quickly, include:</p>
+      <ul>
+        <li>What you need built, or the problem you want solved</li>
+        <li>Your timeline</li>
+        <li>Your budget range, if you have one</li>
+        <li>Your email or WhatsApp number</li>
+      </ul>
+      <ContactForm />
+      <div class="actions">
+        {site.email && <a class="btn btn-light" href={`mailto:${site.email}`}>Email us</a>}
+        {site.whatsapp && <a class="btn btn-light" href={`https://wa.me/${site.whatsapp}`}>WhatsApp</a>}
+      </div>
+      <div class="contact-lines">
+        {site.email && <span>{site.email}</span>}
+        <span>{site.location}</span>
+      </div>
+    </div>
+  </section>
+</Base>

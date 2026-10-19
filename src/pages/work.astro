@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectBlock from '../components/ProjectBlock.astro';
+import { site } from '../data/site';
+import { projects } from '../data/projects';
+
+const liveProjects = projects.filter((p) => p.live);
+---
+<Base
+  title={`Work | ${site.name}`}
+  description="Live projects built and deployed by Veridan Digital's founder."
+  path="/work/"
+>
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h1>Work we have built</h1>
+        <p>
+          Our live projects were built and deployed by our founder, using AI tools to write code and directing the
+          architecture, deployment and testing himself.
+        </p>
+      </div>
+      {liveProjects.map((project) => <ProjectBlock project={project} />)}
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap cta-inner">
+      <h2>Have a project in mind?</h2>
+      <p>We reply within {site.replyTime}.</p>
+      <div class="actions">
+        <a class="btn btn-amber" href="/contact/">Contact us</a>
+      </div>
+    </div>
+  </section>
+</Base>

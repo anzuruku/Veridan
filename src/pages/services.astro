@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import ServiceRow from '../components/ServiceRow.astro';
+import { services } from '../data/services';
+import { site } from '../data/site';
+
+const core = services.filter((s) => s.tier === 'core');
+const supporting = services.filter((s) => s.tier === 'supporting');
+---
+<Base
+  title={`Services | ${site.name}`}
+  description="Websites, AI agents and automation, and online admin. Each service has a written scope and a quote."
+  path="/services/"
+>
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h1>Services</h1>
+        <p>Each service has a written scope, so you know what you are getting before we start.</p>
+      </div>
+      <p class="eyebrow">Core services</p>
+      <div class="services">
+        {core.map((service) => <ServiceRow service={service} />)}
+      </div>
+      <p class="eyebrow">Supporting services</p>
+      <div class="services">
+        {supporting.map((service) => <ServiceRow service={service} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Process</p>
+        <h2>How we work</h2>
+        <p>Four steps, with payment split across milestones so you pay as work is delivered.</p>
+      </div>
+      <ol class="steps">
+        {site.process.map((step) => (
+          <li>
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </li>
+        ))}
+      </ol>
+      <p><a href="/how-we-work/">Read the full process</a></p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap cta-inner">
+      <h2>Tell us what you need.</h2>
+      <p>We reply within {site.replyTime}.</p>
+      <div class="actions">
+        <a class="btn btn-amber" href="/contact/">Contact us</a>
+      </div>
+    </div>
+  </section>
+</Base>

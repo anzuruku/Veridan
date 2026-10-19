@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+<Base title={`Privacy notice | ${site.name}`} path="/privacy/">
+  <article class="legal">
+    <h1>Privacy notice</h1>
+    <h2>What we collect</h2>
+    <p>Your name, email address, phone or WhatsApp number, and anything you write in a message or enquiry.</p>
+    <h2>Why we use it</h2>
+    <p>To reply to you, prepare a quote, deliver the work you ask for and take payment.</p>
+    <h2>Who else sees it</h2>
+    <p>Resend delivers contact form messages to us by email. Cloudflare hosts the site and runs the anti-spam check on the contact form. WhatsApp and email are used only if you contact us through them.</p>
+    <h2>How long we keep it</h2>
+    <p>We keep enquiries only as long as needed to reply to you and deliver any work you ask for. We keep payment and tax records for as long as the law requires.</p>
+    <h2>Cookies and analytics</h2>
+    <p>This site does not use analytics or advertising cookies. If we turn on the anti-spam check on the contact form, Cloudflare Turnstile may set a technical cookie to tell people from bots.</p>
+    <h2>Your rights</h2>
+    <p>You can ask for a copy of your data or ask us to delete it. Contact us using the details on our homepage.</p>
+  </article>
+</Base>

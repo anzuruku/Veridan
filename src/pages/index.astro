@@ -1,0 +1,93 @@
+---
+import Base from '../layouts/Base.astro';
+import BeamGraphic from '../components/BeamGraphic.astro';
+import { site } from '../data/site';
+import { services } from '../data/services';
+import { projects } from '../data/projects';
+
+const liveProjects = projects.filter((p) => p.live);
+---
+<Base>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>{site.headline}</h1>
+        <p class="lede">{site.positioning}</p>
+        <div class="actions">
+          <a class="btn btn-amber" href="/contact/">Contact us</a>
+          <a class="btn btn-ghost" href="/services/">See our services</a>
+        </div>
+        <p class="location">{site.location}</p>
+      </div>
+      <BeamGraphic />
+    </div>
+  </section>
+
+  <div class="proof">
+    <div class="wrap">
+      <ul>
+        {site.proof.map((line) => <li>{line}</li>)}
+      </ul>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Services</p>
+        <h2>What we build and run</h2>
+      </div>
+      <ul class="teaser">
+        {services.map((s) => (
+          <li>
+            <h3>{s.name}</h3>
+            <p>{s.tagline}</p>
+          </li>
+        ))}
+      </ul>
+      <p><a href="/services/">See the full scope of each service</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Work</p>
+        <h2>Work we have built</h2>
+        <p>{liveProjects.length} live projects, built and deployed by our founder.</p>
+      </div>
+      <p><a href="/work/">See our work</a></p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap cta-inner">
+      <h2>Tell us what you want to build.</h2>
+      <p>We reply within {site.replyTime}.</p>
+      <div class="actions">
+        <a class="btn btn-amber" href="/contact/">Contact us</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .teaser {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    display: grid;
+    gap: 1.5rem;
+  }
+  .teaser h3 {
+    margin: 0 0 0.25rem;
+  }
+  .teaser p {
+    margin: 0;
+  }
+  @media (min-width: 720px) {
+    .teaser {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

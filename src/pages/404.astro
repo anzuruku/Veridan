@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+<Base title={`Page not found | ${site.name}`} description="This page does not exist. Return to the Veridan Digital homepage." noindex={true}>
+  <section class="legal">
+    <h1>Page not found</h1>
+    <p>The page you were looking for has moved or does not exist.</p>
+    <p><a class="btn btn-amber" href="/">Back to the homepage</a></p>
+  </section>
+</Base>

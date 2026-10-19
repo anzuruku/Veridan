@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+<Base title={`Thanks | ${site.name}`} description="Your message has been received." noindex={true}>
+  <section class="legal">
+    <h1>Thank you</h1>
+    <p>Your message has reached us. We reply within {site.replyTime}.</p>
+    <p><a class="btn btn-ghost" href="/">Back to the homepage</a></p>
+  </section>
+</Base>
