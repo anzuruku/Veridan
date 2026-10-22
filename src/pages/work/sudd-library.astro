@@ -1,0 +1,236 @@
+---
+import Base from '../../layouts/Base.astro';
+import { site } from '../../data/site';
+---
+<Base
+  title={`Sudd Library case study | ${site.name}`}
+  description="Sudd Library is a free, open-source library of 80+ curriculum resources for South Sudanese teachers and students. Built and deployed by our founder."
+  path="/work/sudd-library/"
+>
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Case study · Open-source product · Live</p>
+      <div class="section-head">
+        <h1>Sudd Library</h1>
+        <p class="lede">
+          A free, open-source library of 80+ curriculum resources for South Sudanese teachers and students: textbooks,
+          lesson notes, schemes of work, past papers and holiday packages.
+        </p>
+      </div>
+      <div class="case-hero">
+        <img
+          src="/case-studies/sudd-library/homepage.png"
+          alt="Sudd Library homepage on a phone, with the library title and search."
+          width="720"
+          height="1612"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="wrap case-grid">
+      <div>
+        <p class="eyebrow">Why it exists</p>
+        <h2>Curriculum materials were hard to get</h2>
+      </div>
+      <div class="case-copy">
+        <p>
+          It was built after volunteering to teach in South Sudan and finding curriculum materials extremely hard to get
+          hold of. Many learners, including displaced families, cannot easily reach materials for their own curriculum.
+        </p>
+        <p>
+          Sudd Library closes that gap. It is free to use, with no account, no login and no data collected from the
+          people who use it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section case-section-paper">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What it does</p>
+        <h2>Organised by level, subject and resource type</h2>
+        <p>
+          Primary (P1 to P8), Secondary (S1 to S4) and AES, each broken down by subject, then by resource type. Search by
+          class, subject or topic, open a resource and download it.
+        </p>
+      </div>
+      <div class="case-shots">
+        <figure>
+          <img
+            src="/case-studies/sudd-library/level.jpg"
+            alt="Sudd Library Senior 4 page on a phone, listing 14 subjects grouped as STEM, Languages and Humanities, each with its number of files."
+            width="720"
+            height="1600"
+            loading="lazy"
+          />
+          <figcaption>A level page: Senior 4, with subjects grouped by area and the number of files in each.</figcaption>
+        </figure>
+      </div>
+      <ul class="case-features">
+        <li>
+          <h3>Textbooks</h3>
+          <p>Linked directly to the National Curriculum Development Centre (NCDC), not re-hosted, because the content is copyrighted.</p>
+        </li>
+        <li>
+          <h3>Lesson notes and schemes of work</h3>
+          <p>Prepared from the official NCDC textbooks and syllabus, then checked by a person before publication.</p>
+        </li>
+        <li>
+          <h3>Past papers</h3>
+          <p>With marking schemes where they are available.</p>
+        </li>
+        <li>
+          <h3>Holiday packages</h3>
+          <p>Packages of materials for the school holidays.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="wrap case-grid">
+      <div>
+        <p class="eyebrow">Built to work on weak connections</p>
+        <h2>Every resource is a direct link</h2>
+      </div>
+      <div class="case-copy">
+        <p>
+          Every resource is reachable in a handful of taps. Once a page has loaded, it keeps working on a weak or missing
+          connection. On a phone, it can be added to the home screen and opened like an app.
+        </p>
+        <p>
+          Everything except textbooks is stored in a public Cloudflare R2 bucket. Textbooks stay on the NCDC's own site.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section case-section-paper">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How it is built</p>
+        <h2>Free to run, and open for anyone to inspect</h2>
+      </div>
+      <ul class="case-features">
+        <li>
+          <h3>Astro site, Cloudflare hosting</h3>
+          <p>Built with Astro and hosted on Cloudflare Pages and Workers.</p>
+        </li>
+        <li>
+          <h3>Search</h3>
+          <p>Pagefind, used to search the resources from the site's own pages.</p>
+        </li>
+        <li>
+          <h3>Content editing</h3>
+          <p>A browser-based editor (Decap CMS) commits changes straight to GitHub. Content editors do not need to run anything locally.</p>
+        </li>
+        <li>
+          <h3>Running cost</h3>
+          <p>Currently $0 to run.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="wrap case-grid">
+      <div>
+        <p class="eyebrow">Trust and licensing</p>
+        <h2>Independent, and clear about what it is not</h2>
+      </div>
+      <div class="case-copy">
+        <p>
+          Sudd Library is an independent project. It follows the South Sudan national curriculum, but it is not affiliated
+          with, endorsed by or run by the NCDC, the Ministry of General Education and Instruction, or any examination
+          council.
+        </p>
+        <p>
+          The code is licensed under AGPLv3. The Sudd Library name and logo are reserved, so forks must rename themselves.
+          If a resource is wrong, a footer link lets anyone report it, and corrections are made.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section case-section-paper">
+    <div class="wrap case-grid">
+      <div>
+        <p class="eyebrow">Where it stands</p>
+        <h2>Live and free to use</h2>
+      </div>
+      <div class="case-copy">
+        <p>
+          Sudd Library is live. It has no fees, no accounts and no adverts. This page does not claim usage numbers, because
+          the library does not collect them.
+        </p>
+        <p>
+          It was built and deployed by our founder, Anzuruku Jacob, who designed and built every part of it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap cta-inner">
+      <h2>Building something for learners in your community?</h2>
+      <p>We reply within {site.replyTime}.</p>
+      <div class="actions">
+        <a class="btn btn-amber" href="/contact/">Contact us</a>
+        <a class="btn btn-light" href="/work/">Back to all work</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .lede { margin-top: 0.25rem; }
+  .case-hero { margin-top: 2.5rem; display: flex; justify-content: center; }
+  .case-hero img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 24px;
+    border: 1px solid var(--line);
+    box-shadow: 0 12px 32px rgb(15 23 42 / 0.12);
+  }
+  .case-section { padding: var(--section) 0; }
+  .case-section-paper { background: var(--paper); }
+  .case-grid { display: grid; gap: 1.5rem; }
+  .case-copy { display: grid; gap: 1rem; max-width: 40rem; }
+  .case-features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  .case-features li {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    display: grid;
+    gap: 0.5rem;
+    align-content: start;
+  }
+  .case-features p { color: var(--mute); }
+  .case-shots { display: flex; justify-content: center; margin-bottom: 2.5rem; }
+  .case-shots img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 24px;
+    border: 1px solid var(--line);
+    box-shadow: 0 12px 32px rgb(15 23 42 / 0.12);
+  }
+  .case-shots figure { margin: 0; display: grid; gap: 0.75rem; justify-items: center; }
+  .case-shots figcaption { color: var(--mute); font-size: 0.95rem; text-align: center; max-width: 300px; }
+  @media (min-width: 760px) {
+    .case-grid { grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+  }
+</style>

@@ -12,7 +12,9 @@ export const site = {
     'Veridan Digital builds websites, AI agents and automation for businesses, and runs the online admin that keeps them moving. Based in Uganda, working worldwide.',
   location: 'Based in Uganda, working worldwide.',
   email: 'jacobanzuruku@gmail.com', // temporary. Replace with a business email once the domain is bought.
-  whatsapp: '256764203022', // digits only with country code. Leave empty to hide the button.
+  whatsapp: '256761634749', // digits only with country code. Leave empty to hide the button.
+  linkedinUrl: '', // company LinkedIn page address. Leave empty until the page is active.
+  googleBusinessUrl: '', // Google Business Profile link. Leave empty until the profile is live.
   bookingUrl: '', // your Cal.com link. Leave empty to send people to the contact section.
   turnstileSiteKey: '', // public site key from Cloudflare Turnstile. Leave empty to hide the bot check.
   replyTime: 'one working day',

@@ -1,0 +1,182 @@
+---
+import { services } from '../data/services';
+// Core services first, then supporting ones.
+const ordered = [
+  ...services.filter((s) => s.tier === 'core'),
+  ...services.filter((s) => s.tier === 'supporting'),
+];
+---
+<div class="svc-carousel" data-carousel>
+  <div class="svc-track" tabindex="0" role="region" aria-label="Our services">
+    {ordered.map((s, i) => (
+      <article class="svc-card" aria-label={`${i + 1} of ${ordered.length}: ${s.name}`}>
+        <p class="svc-tier">{s.tier === 'core' ? 'Core service' : 'Supporting service'}</p>
+        <h3>{s.name}</h3>
+        <p>{s.tagline}</p>
+        <p class="svc-best">{s.bestFor}</p>
+        <a href="/services/">See details</a>
+      </article>
+    ))}
+  </div>
+  <div class="svc-dots">
+    {ordered.map((s, i) => (
+      <button type="button" aria-label={`Show ${s.name}`} data-index={i} aria-current={i === 0 ? 'true' : 'false'}></button>
+    ))}
+  </div>
+</div>
+
+<style>
+  .svc-carousel {
+    width: 100%;
+  }
+  .svc-track {
+    position: relative;
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .svc-track::-webkit-scrollbar {
+    display: none;
+  }
+  .svc-card {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+    padding: 24px;
+    color: #fff;
+  }
+  .svc-card h3 {
+    margin: 6px 0 8px;
+    font-size: 1.35rem;
+    color: #fff;
+  }
+  .svc-card p {
+    margin: 0 0 8px;
+    color: #d6dde9;
+  }
+  .svc-tier {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #22d3ee !important;
+  }
+  .svc-best {
+    font-weight: 600;
+    color: #fdba74 !important;
+  }
+  .svc-card a {
+    color: #fff;
+    font-weight: 600;
+  }
+  .svc-dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 14px;
+  }
+  .svc-dots button {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+    transition: width 0.3s ease, background 0.3s ease;
+  }
+  .svc-dots button[aria-current='true'] {
+    width: 26px;
+    background: #22d3ee;
+  }
+</style>
+
+<script>
+  const root = document.querySelector<HTMLElement>('[data-carousel]');
+  if (root) {
+    const track = root.querySelector<HTMLElement>('.svc-track')!;
+    const cards = Array.from(track.querySelectorAll<HTMLElement>('.svc-card'));
+    const dots = Array.from(root.querySelectorAll<HTMLButtonElement>('.svc-dots button'));
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let index = 0;
+    let paused = false;
+    let timer: number | undefined;
+    let resumeTimer: number | undefined;
+
+    const setActive = (i: number) => {
+      index = i;
+      dots.forEach((d, n) => d.setAttribute('aria-current', n === i ? 'true' : 'false'));
+    };
+
+    const show = (i: number) => {
+      const next = (i + cards.length) % cards.length;
+      track.scrollTo({
+        left: cards[next].offsetLeft - track.offsetLeft,
+        behavior: reduceMotion ? 'auto' : 'smooth',
+      });
+      setActive(next);
+    };
+
+    // Keep the dots in step when the visitor swipes or scrolls by hand.
+    track.addEventListener(
+      'scroll',
+      () => {
+        let best = 0;
+        let distance = Infinity;
+        cards.forEach((c, n) => {
+          const d = Math.abs(c.offsetLeft - track.offsetLeft - track.scrollLeft);
+          if (d < distance) {
+            distance = d;
+            best = n;
+          }
+        });
+        if (best !== index) setActive(best);
+      },
+      { passive: true },
+    );
+
+    dots.forEach((d, n) => d.addEventListener('click', () => show(n)));
+
+    // Pause while the visitor is interacting with the cards.
+    const pause = () => {
+      paused = true;
+    };
+    const resume = () => {
+      paused = false;
+    };
+    root.addEventListener('mouseenter', pause);
+    root.addEventListener('mouseleave', resume);
+    root.addEventListener('focusin', pause);
+    root.addEventListener('focusout', resume);
+    root.addEventListener(
+      'touchstart',
+      () => {
+        pause();
+        window.clearTimeout(resumeTimer);
+      },
+      { passive: true },
+    );
+    root.addEventListener(
+      'touchend',
+      () => {
+        window.clearTimeout(resumeTimer);
+        resumeTimer = window.setTimeout(resume, 4000);
+      },
+      { passive: true },
+    );
+
+    // Move on every 6 seconds, unless the visitor prefers reduced motion.
+    if (!reduceMotion && cards.length > 1) {
+      timer = window.setInterval(() => {
+        if (!paused) show(index + 1);
+      }, 6000);
+    }
+    void timer;
+  }
+</script>

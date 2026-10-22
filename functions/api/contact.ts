@@ -32,6 +32,7 @@ export async function onRequestPost({ request, env }: Context): Promise<Response
   const name = clean(form.get('name'), 100);
   const contact = clean(form.get('contact'), 100);
   const service = clean(form.get('service'), 100) || 'Not stated';
+  const source = clean(form.get('source'), 100) || 'Not stated';
   const message = clean(form.get('message'), 2000);
 
   if (!name || !contact || !message) {
@@ -74,7 +75,7 @@ export async function onRequestPost({ request, env }: Context): Promise<Response
       to: [to],
       reply_to: EMAIL_PATTERN.test(contact) ? contact : undefined,
       subject: `New enquiry from ${name}`,
-      text: `Name: ${name}\nContact: ${contact}\nService: ${service}\n\n${message}\n`,
+      text: `Name: ${name}\nContact: ${contact}\nService: ${service}\nHeard about us via: ${source}\n\n${message}\n`,
     }),
   });
 

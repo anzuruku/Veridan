@@ -5,9 +5,12 @@ const { project } = Astro.props as { project: Project };
 <article class="project">
   <div class="project-intro">
     <h3>{project.name}</h3>
+    <p class="eyebrow">{project.type}</p>
     <p class="status">{project.status}</p>
     <p>{project.summary}</p>
     {project.url && <p><a href={project.url}>Open {project.name}</a></p>}
+    {project.caseStudyUrl && <p><a href={project.caseStudyUrl}>Read the case study</a></p>}
+    {project.repoUrl && <p><a href={project.repoUrl} rel="noopener">View the source code</a></p>}
   </div>
   <div>
     <ul>

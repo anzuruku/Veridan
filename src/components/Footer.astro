@@ -39,6 +39,8 @@ const liveProducts = products.filter((p) => p.status === 'live');
         <ul>
           {site.email && <li><a href={`mailto:${site.email}`}>{site.email}</a></li>}
           {site.whatsapp && <li><a href={`https://wa.me/${site.whatsapp}`}>WhatsApp</a></li>}
+          {site.linkedinUrl && <li><a href={site.linkedinUrl}>LinkedIn</a></li>}
+          {site.googleBusinessUrl && <li><a href={site.googleBusinessUrl}>Google profile</a></li>}
           <li>Reply within {site.replyTime}</li>
         </ul>
       </div>

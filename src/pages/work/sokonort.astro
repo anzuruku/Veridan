@@ -1,0 +1,248 @@
+---
+import Base from '../../layouts/Base.astro';
+import { site } from '../../data/site';
+---
+<Base
+  title={`SokoNort case study | ${site.name}`}
+  description="SokoNort is a local marketplace and delivery app for Adjumani District, Uganda. Built and deployed by our founder."
+  path="/work/sokonort/"
+>
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Case study · Own product · Live, onboarding its first customers</p>
+      <div class="section-head">
+        <h1>SokoNort</h1>
+        <p class="lede">
+          A local marketplace and delivery app for Adjumani District, Uganda. It connects small shopkeepers, produce
+          farmers, hardware sellers and local artisans with residents for fast, reliable doorstep delivery.
+        </p>
+      </div>
+      <div class="case-hero">
+        <img
+          src="/case-studies/sokonort/homepage.jpg"
+          alt="SokoNort homepage on a phone, showing the Adjumani District location, the SokoNort name and the Market and Real Estate cards."
+          width="720"
+          height="1600"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="wrap case-grid">
+      <div>
+        <p class="eyebrow">The problem</p>
+        <h2>Local trade in Adjumani has no single place to find it</h2>
+      </div>
+      <div class="case-copy">
+        <p>
+          Shopkeepers, farmers and artisans in Adjumani sell through their own networks. SokoNort gives residents one place
+          to browse what is on sale nearby, order it, and have it brought to their door.
+        </p>
+        <p>
+          SokoNort is built around the way local trade already works: people pay on delivery, many prefer to pay with
+          Mobile Money, and not everyone wants to type an order. It is designed for those conditions from the start.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section case-section-paper">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What it does</p>
+        <h2>Two marketplaces in one app</h2>
+        <p>
+          The Market covers shops, goods, fabrics and electronics. Real Estate lists plots, rentals and houses, with
+          verified listings.
+        </p>
+      </div>
+      <div class="case-shots">
+        <figure>
+          <img
+            src="/case-studies/sokonort/categories.jpg"
+            alt="SokoNort home screen cards for Market and Real Estate, with Local Vendors and Pay on Delivery tags."
+            width="720"
+            height="1600"
+            loading="lazy"
+          />
+          <figcaption>The Market and Real Estate cards on the home screen.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Built for Adjumani</p>
+        <h2>Designed around how people pay and order</h2>
+      </div>
+      <ul class="case-features">
+        <li>
+          <h3>Pay on delivery</h3>
+          <p>No advance online payment. Customers inspect goods at their door, then pay in cash or Mobile Money.</p>
+        </li>
+        <li>
+          <h3>Voice note orders</h3>
+          <p>Customers can record instructions for custom orders or special delivery requests in Madi, Lugbara, Acholi or English.</p>
+        </li>
+        <li>
+          <h3>Private phone numbers</h3>
+          <p>Customer and vendor phone numbers stay private inside SokoNort.</p>
+        </li>
+        <li>
+          <h3>Return window</h3>
+          <p>48 hours to return standard items, and 1 hour for fresh perishables, if the delivered items are incorrect.</p>
+        </li>
+        <li>
+          <h3>Optional GPS</h3>
+          <p>Customers can attach their location for accurate delivery routing, but it is never required.</p>
+        </li>
+        <li>
+          <h3>Sub-counties served</h3>
+          <p>Served from Adjumani Town (Central) across the Pakele, Ciforo, Dzaipi, Ukusijoni, Ofua and Itirikwa sub-counties, and Agojo Refugee Settlement.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="case-section case-section-paper">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Under the hood</p>
+        <h2>What runs behind the screens</h2>
+      </div>
+      <ul class="case-features">
+        <li>
+          <h3>Mobile Money and cash</h3>
+          <p>Mobile Money and cash on delivery are both supported, with Mobile Money payments confirmed by webhook.</p>
+        </li>
+        <li>
+          <h3>Customer-care assistant</h3>
+          <p>An AI assistant answers customers. If the AI service is down, a built-in engine takes over so customers still get an answer.</p>
+        </li>
+        <li>
+          <h3>Notifications that reach every phone</h3>
+          <p>Push notifications and SMS are sent together, so a customer is reached even when one channel fails.</p>
+        </li>
+        <li>
+          <h3>Four user roles</h3>
+          <p>Shoppers, vendors, market partners and admins each have their own account. Market partners can see profits and finance but not the admin view, and database rules enforce these limits.</p>
+        </li>
+        <li>
+          <h3>Photo uploads that fall back</h3>
+          <p>If a photo upload fails, it moves to the next layer: Cloudflare R2, then Firebase Storage, then the database.</p>
+        </li>
+        <li>
+          <h3>Operations Center</h3>
+          <p>Staff review vendor approvals and moderate products from one dashboard.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">In the app</p>
+        <h2>The mission, in the app's own words</h2>
+        <p>The About screen explains what SokoNort is for, and what customers and sellers can expect.</p>
+      </div>
+      <div class="case-shots case-shots-two">
+        <figure>
+          <img
+            src="/case-studies/sokonort/about-mission.jpg"
+            alt="SokoNort About screen: the local mission statement and the reasons to shop and sell on SokoNort, including Pay on Delivery and Strict Privacy Policy."
+            width="720"
+            height="1600"
+            loading="lazy"
+          />
+          <figcaption>The About screen: local mission and the main reasons to use SokoNort.</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="/case-studies/sokonort/about-coverage.jpg"
+            alt="SokoNort About screen: the SokoNort Guarantee, the list of sub-counties served and the Become a Vendor button."
+            width="720"
+            height="1600"
+            loading="lazy"
+          />
+          <figcaption>The About screen: the guarantee, coverage and how to become a vendor.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section case-section-paper">
+    <div class="wrap case-grid">
+      <div>
+        <p class="eyebrow">Where it stands</p>
+        <h2>Live, with no real orders yet</h2>
+      </div>
+      <div class="case-copy">
+        <p>
+          SokoNort is live and onboarding its first customers. It has not yet processed real orders, payments or listings,
+          so this page makes no claims about volumes or usage.
+        </p>
+        <p>
+          It is a v1.0.0 release, built and deployed by our founder, Anzuruku Jacob, who designed and built every part of it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap cta-inner">
+      <h2>Building something for your own community?</h2>
+      <p>We reply within {site.replyTime}.</p>
+      <div class="actions">
+        <a class="btn btn-amber" href="/contact/">Contact us</a>
+        <a class="btn btn-light" href="/work/">Back to all work</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .lede { margin-top: 0.25rem; }
+  .case-hero { margin-top: 2.5rem; display: flex; justify-content: center; }
+  .case-hero img,
+  .case-shots img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 24px;
+    border: 1px solid var(--line);
+    box-shadow: 0 12px 32px rgb(15 23 42 / 0.12);
+  }
+  .case-section { padding: var(--section) 0; }
+  .case-section-paper { background: var(--paper); }
+  .case-grid { display: grid; gap: 1.5rem; }
+  .case-copy { display: grid; gap: 1rem; max-width: 40rem; }
+  .case-features {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  .case-features li {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    display: grid;
+    gap: 0.5rem;
+    align-content: start;
+  }
+  .case-features p { color: var(--mute); }
+  .case-shots { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
+  .case-shots figure { margin: 0; display: grid; gap: 0.75rem; justify-items: center; }
+  .case-shots figcaption { color: var(--mute); font-size: 0.95rem; text-align: center; max-width: 300px; }
+  @media (min-width: 760px) {
+    .case-grid { grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+  }
+</style>

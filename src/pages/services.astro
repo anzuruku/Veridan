@@ -48,6 +48,43 @@ const supporting = services.filter((s) => s.tier === 'supporting');
     </div>
   </section>
 
+  <section class="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Questions</p>
+        <h2>Before you ask</h2>
+      </div>
+      <div class="faq-list">
+        <details name="faq" open>
+          <summary>How long does a starter website take?</summary>
+          <p>About 2 to 3 weeks, once we have your content. Most delays come from waiting for content or feedback.</p>
+        </details>
+        <details name="faq">
+          <summary>What do you need from me to start?</summary>
+          <p>Your business name and any logo you have, the text and photos for your pages, the email address you want to use, and one person who can make decisions.</p>
+        </details>
+        <details name="faq">
+          <summary>Do you give a quote before work starts?</summary>
+          <p>Yes. You get a written scope and quote first, and payment is split across milestones so you pay as work is delivered.</p>
+        </details>
+        <details name="faq">
+          <summary>What happens after launch?</summary>
+          <p>We hand over every file and login. The starter automation includes 30 days of support. For ongoing help, choose the monthly admin plan.</p>
+        </details>
+        <details name="faq">
+          <summary>What about changes after handover?</summary>
+          <p>Changes after handover are quoted separately, unless they are covered by a monthly plan.</p>
+        </details>
+        <details name="faq">
+          <summary>Do you work with clients outside Uganda?</summary>
+          <p>Yes. We work remotely with clients worldwide.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <p class="back-top"><a href="#top">Back to top</a></p>
+
   <section class="cta">
     <div class="wrap cta-inner">
       <h2>Tell us what you need.</h2>
@@ -58,3 +95,51 @@ const supporting = services.filter((s) => s.tier === 'supporting');
     </div>
   </section>
 </Base>
+
+<style>
+  .faq-list {
+    max-width: 760px;
+    border-bottom: 1px solid #d5deeb;
+  }
+  .faq-list details {
+    border-top: 1px solid #d5deeb;
+  }
+  .faq-list summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.05rem;
+    list-style: none;
+  }
+  .faq-list summary::-webkit-details-marker {
+    display: none;
+  }
+  .faq-list summary::after {
+    content: '+';
+    font-size: 1.4rem;
+    line-height: 1;
+    color: #2563eb;
+    transition: transform 0.2s ease;
+  }
+  .faq-list details[open] summary::after {
+    content: '\2212';
+  }
+  .faq-list summary:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 4px;
+  }
+  .back-top {
+    text-align: center;
+    margin: 2rem 0 0;
+  }
+  .faq-list details p {
+    margin: 0 0 1.25rem;
+    max-width: 62ch;
+    color: #51617d;
+    line-height: 1.6;
+  }
+</style>

@@ -1,5 +1,13 @@
 ---
 import { site } from '../data/site';
+const sourceOptions = [
+  'Google search',
+  'LinkedIn',
+  'WhatsApp',
+  'Facebook or Instagram',
+  'Referral from a client or friend',
+  'Other',
+];
 const serviceOptions = [
   'Websites',
   'Starter automation',
@@ -21,6 +29,13 @@ const serviceOptions = [
     <label for="cf-service">What do you need?</label>
     <select id="cf-service" name="service">
       {serviceOptions.map((option) => <option value={option}>{option}</option>)}
+    </select>
+  </div>
+  <div class="field">
+    <label for="cf-source">How did you hear about us? (optional)</label>
+    <select id="cf-source" name="source">
+      <option value="">Choose one</option>
+      {sourceOptions.map((option) => <option value={option}>{option}</option>)}
     </select>
   </div>
   <div class="field">

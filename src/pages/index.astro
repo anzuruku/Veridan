@@ -1,8 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
-import BeamGraphic from '../components/BeamGraphic.astro';
+import ServiceCarousel from '../components/ServiceCarousel.astro';
 import { site } from '../data/site';
-import { services } from '../data/services';
 import { projects } from '../data/projects';
 
 const liveProjects = projects.filter((p) => p.live);
@@ -19,7 +18,7 @@ const liveProjects = projects.filter((p) => p.live);
         </div>
         <p class="location">{site.location}</p>
       </div>
-      <BeamGraphic />
+      <ServiceCarousel />
     </div>
   </section>
 
@@ -34,28 +33,15 @@ const liveProjects = projects.filter((p) => p.live);
   <section>
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">Services</p>
-        <h2>What we build and run</h2>
-      </div>
-      <ul class="teaser">
-        {services.map((s) => (
-          <li>
-            <h3>{s.name}</h3>
-            <p>{s.tagline}</p>
-          </li>
-        ))}
-      </ul>
-      <p><a href="/services/">See the full scope of each service</a></p>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="section-head">
         <p class="eyebrow">Work</p>
         <h2>Work we have built</h2>
         <p>{liveProjects.length} live projects, built and deployed by our founder.</p>
       </div>
+      <ul class="case-links">
+        {liveProjects.filter((p) => p.caseStudyUrl).map((p) => (
+          <li><a href={p.caseStudyUrl}>{p.name}: read the case study</a></li>
+        ))}
+      </ul>
       <p><a href="/work/">See our work</a></p>
     </div>
   </section>
@@ -84,6 +70,13 @@ const liveProjects = projects.filter((p) => p.live);
   }
   .teaser p {
     margin: 0;
+  }
+  .case-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem;
+    display: grid;
+    gap: 0.5rem;
   }
   @media (min-width: 720px) {
     .teaser {

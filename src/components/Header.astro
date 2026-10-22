@@ -14,6 +14,7 @@ import { site } from '../data/site';
     <details class="menu">
       <summary>Menu</summary>
       <ul>
+        <li><a href="/">Home</a></li>
         {site.nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
         <li><a href="/contact/">Contact us</a></li>
       </ul>

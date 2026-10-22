@@ -25,7 +25,7 @@ const { title = `${site.name} | Websites, AI agents and automation`, description
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={`${site.url}${path}`} />
-    <meta property="og:image" content={`${site.url}/og-banner.png`} />
+    <meta property="og:image" content={`${site.url}/social/veridan-og.png`} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Veridan Digital logo: VERIDAN DIGITAL, build. automate. scale." />
@@ -34,13 +34,19 @@ const { title = `${site.name} | Websites, AI agents and automation`, description
       '@type': 'ProfessionalService',
       name: site.name,
       url: `${site.url}/`,
+      logo: `${site.url}/social/veridan-profile.png`,
+      image: `${site.url}/social/veridan-og.png`,
       email: site.email || undefined,
       description: site.description,
       address: { '@type': 'PostalAddress', addressCountry: 'UG' },
       founder: { '@type': 'Person', name: site.founder },
+      sameAs: [site.linkedinUrl, site.googleBusinessUrl].filter(Boolean),
     })} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content={`${site.url}/og-banner.png`} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${site.url}/social/veridan-og.png`} />
+    <meta name="twitter:image:alt" content="Veridan Digital: websites, AI agents and automation that keep working when the network doesn't." />
     <style is:global>
       .eyebrow {
         font-size: 0.78rem;
@@ -49,6 +55,23 @@ const { title = `${site.name} | Websites, AI agents and automation`, description
         text-transform: uppercase;
         color: #51617d;
         margin: 0 0 0.75rem;
+      }
+      .wa-float {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        z-index: 50;
+        padding: 12px 18px;
+        border-radius: 999px;
+        background: #15803d;
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      }
+      .wa-float:focus-visible {
+        outline: 3px solid #22d3ee;
+        outline-offset: 3px;
       }
       .best-for {
         font-size: 0.95rem;
@@ -63,5 +86,8 @@ const { title = `${site.name} | Websites, AI agents and automation`, description
     <Header />
     <main id="main"><slot /></main>
     <Footer />
+    {site.whatsapp && (
+      <a class="wa-float" href={`https://wa.me/${site.whatsapp}`} aria-label="Chat with us on WhatsApp">WhatsApp us</a>
+    )}
   </body>
 </html>

@@ -5,7 +5,13 @@ import { site } from '../data/site';
 <Base title={`Thanks | ${site.name}`} description="Your message has been received." noindex={true}>
   <section class="legal">
     <h1>Thank you</h1>
-    <p>Your message has reached us. We reply within {site.replyTime}.</p>
-    <p><a class="btn btn-ghost" href="/">Back to the homepage</a></p>
+    <p>Your message has reached us.</p>
+    <h2>What happens next</h2>
+    <ol>
+      <li>We read your message and reply within {site.replyTime}.</li>
+      <li>If your project needs it, we will suggest a short call to agree the scope.</li>
+      <li>You get a written quote before any work starts.</li>
+    </ol>
+    <p><a class="btn btn-ghost" href="/services/">See our services</a> <a href="/">Back to the homepage</a></p>
   </section>
 </Base>
