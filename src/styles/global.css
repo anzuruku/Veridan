@@ -211,7 +211,7 @@ blockquote footer { margin-top: 0.6rem; color: var(--mute); font-size: 0.95rem; 
 
 /* Footer */
 /* Footer */
-.site-footer { position: relative; background: var(--ink); color: #cbd5e1; padding: 56px 0 24px; font-size: 0.95rem; }
+.site-footer { position: relative; background: var(--ink); color: #cbd5e1; padding: 56px 0 104px; font-size: 0.95rem; }
 .site-footer::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 3px; background: linear-gradient(90deg, var(--blue) 0 50%, var(--accent) 50% 100%); }
 .fgrid { display: grid; gap: 36px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
 .fhead { font-family: var(--font-body); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; margin: 0 0 12px; }
