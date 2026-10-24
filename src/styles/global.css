@@ -69,15 +69,15 @@ section { padding: var(--section) 0; }
 .btn {
   display: inline-block;
   padding: 0.85rem 1.4rem;
-  border: 2px solid var(--blue);
+  border: 2px solid var(--accent);
   border-radius: var(--radius);
-  background: var(--blue);
-  color: #fff;
+  background: var(--accent);
+  color: var(--ink);
   font-weight: 600;
   text-decoration: none;
   line-height: 1.2;
 }
-.btn:hover { background: var(--ink); border-color: var(--ink); }
+.btn:hover { background: #e64b00; border-color: #e64b00; color: var(--ink); }
 .btn-amber { background: var(--accent); border-color: var(--accent); color: var(--ink); }
 .btn-amber:hover { background: #e64b00; border-color: #e64b00; color: var(--ink); }
 .btn-ghost { background: transparent; border-color: var(--ink); color: var(--ink); }
@@ -114,8 +114,9 @@ section { padding: var(--section) 0; }
   background-color: var(--paper);
   background-image:
     linear-gradient(rgba(31, 95, 191, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(31, 95, 191, 0.07) 1px, transparent 1px);
-  background-size: 56px 56px;
+    linear-gradient(90deg, rgba(31, 95, 191, 0.07) 1px, transparent 1px),
+    linear-gradient(180deg, #dbeafe 0%, var(--paper) 75%);
+  background-size: 56px 56px, 56px 56px, 100% 100%;
 }
 .hero-grid { display: grid; gap: 2.5rem; align-items: center; }
 .hero-copy { display: grid; gap: 1.5rem; }
