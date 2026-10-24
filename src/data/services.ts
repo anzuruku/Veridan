@@ -82,4 +82,20 @@ export const services: Service[] = [
     timeline: 'Agreed in writing after the audit',
     status: 'live',
   },
+  {
+    slug: 'website-care',
+    name: 'Website care contract',
+    tier: 'supporting',
+    tagline: 'We keep your website updated, backed up and secure, on an annual contract.',
+    bestFor: 'Best for: businesses that want their website kept running without managing it themselves.',
+    includes: [
+      'Updates to the website software and regular security checks',
+      'Regular backups of your website',
+      'A set number of small text or photo changes each month, agreed in writing',
+      'Replies within one working day',
+    ],
+    price: '',
+    timeline: 'Annual contract, agreed in writing',
+    status: 'live',
+  },
 ];
