@@ -4,6 +4,7 @@ export type Member = {
   name: string;
   role: string;
   bio: string;
+  photo?: string; // path under /public, e.g. '/team/jacob.jpg'. Initials are shown when empty.
   links?: { label: string; url: string }[]; // only active accounts, and only with the person's permission
 };
 

@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { site } from '../data/site';
 import { team } from '../data/team';
+import TeamSection from '../components/TeamSection.astro';
 ---
 <Base
   title={`About | ${site.name}`}
@@ -9,7 +10,7 @@ import { team } from '../data/team';
   path="/about/"
 >
   <section class="about">
-    <div class="wrap about-grid">
+    <div class="wrap">
       <div class="about-copy">
         <h1>We work alongside you, not just for you.</h1>
         <p>
@@ -25,22 +26,16 @@ import { team } from '../data/team';
           You always know the person responsible for your work, and the founder answers for every result.
         </p>
       </div>
-      <div>
-        {team.map((member) => (
-          <div class="person">
-            <h2>{member.name}</h2>
-            <p class="role">{member.role}</p>
-            <p>{member.bio}</p>
-            {member.links && member.links.length > 0 && (
-              <p class="member-links">
-                {member.links.map((link) => (
-                  <a href={link.url} rel="noopener">{link.label}</a>
-                ))}
-              </p>
-            )}
-          </div>
-        ))}
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Team</p>
+        <h2>The people behind the work</h2>
       </div>
+      <TeamSection members={team} />
     </div>
   </section>
 
@@ -53,12 +48,3 @@ import { team } from '../data/team';
     </div>
   </section>
 </Base>
-
-<style>
-  .member-links {
-    display: flex;
-    gap: 1.25rem;
-    margin-top: 0.75rem;
-    font-weight: 600;
-  }
-</style>
