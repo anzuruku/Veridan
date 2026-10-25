@@ -1,26 +1,95 @@
 ---
 import Base from '../layouts/Base.astro';
 import { site } from '../data/site';
+
+// Detail for each step. The short versions in site.process are used on the Services page.
+const steps = [
+  {
+    title: 'Brief',
+    what: 'We agree what you need, the price and the timeline in writing.',
+    get: 'A written scope and quote.',
+    need: 'Your goals, any logo or content you already have, and one person who can make decisions.',
+    pay: 'First payment (40%) when you approve the scope.',
+  },
+  {
+    title: 'Build',
+    what: 'We build, and you see progress at each milestone, not just at the end.',
+    get: 'A progress update at each milestone.',
+    need: 'Your text and photos, and quick feedback.',
+    pay: 'No payment at this step.',
+  },
+  {
+    title: 'Review',
+    what: 'You ask for changes before anything is final.',
+    get: 'The revision rounds set out in your scope. The Starter website includes two.',
+    need: 'Your feedback in writing, gathered into one round.',
+    pay: 'Second payment (30%) when the draft is ready for review.',
+  },
+  {
+    title: 'Launch',
+    what: 'We go live and hand over every file and login.',
+    get: 'The finished work, with all files and logins.',
+    need: 'Your final approval.',
+    pay: 'Final payment (30%) on launch. Files and logins are handed over once it is paid.',
+  },
+];
 ---
 <Base
   title={`How we work | ${site.name}`}
   description="Four steps from brief to launch, with payment split across milestones."
   path="/how-we-work/"
 >
-  <section>
+  <section class="page-head">
     <div class="wrap">
       <div class="section-head">
         <h1>How we work</h1>
         <p>Four steps, with payment split across milestones so you pay as work is delivered.</p>
       </div>
-      <ol class="steps">
-        {site.process.map((step) => (
+      <ol class="steps steps-detail">
+        {steps.map((step) => (
           <li>
             <h3>{step.title}</h3>
-            <p>{step.text}</p>
+            <p class="step-what">{step.what}</p>
+            <dl>
+              <dt>You get</dt>
+              <dd>{step.get}</dd>
+              <dt>We need from you</dt>
+              <dd>{step.need}</dd>
+              <dt>Payment</dt>
+              <dd>{step.pay}</dd>
+            </dl>
           </li>
         ))}
       </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Payment</p>
+        <h2>How payment works</h2>
+        <p>The split above is for a Starter website. Other services follow the same idea, with fewer steps.</p>
+      </div>
+      <ul class="pay-list">
+        <li><strong>Starter website:</strong> 40% to start, 30% at review and 30% on launch.</li>
+        <li><strong>Starter automation:</strong> 50% to start and 50% on handover.</li>
+        <li><strong>Improve your existing website:</strong> the audit is paid first, then the fixes are paid in stages.</li>
+        <li><strong>Monthly admin plan and website care contract:</strong> paid in advance.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="page-after">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">After launch</p>
+        <h2>What happens next</h2>
+        <p>
+          Starter automation includes 30 days of support, including fixes. For ongoing help, choose the website care
+          contract or the monthly admin plan. <a href="/services/">See the services</a>.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -34,3 +103,14 @@ import { site } from '../data/site';
     </div>
   </section>
 </Base>
+
+<style>
+  .steps-detail { align-items: start; }
+  .steps-detail dl { margin: 0.5rem 0 0; display: grid; gap: 0.15rem; }
+  .steps-detail dt { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #51617d; margin-top: 0.6rem; }
+  .steps-detail dd { margin: 0; color: var(--mute); }
+  .step-what { color: var(--ink) !important; font-weight: 500; }
+  .pay-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; max-width: 40rem; }
+  .pay-list li { padding: 0.9rem 1.1rem; background: var(--paper); border-left: 4px solid var(--accent); }
+  @media (min-width: 900px) { .steps-detail { grid-template-columns: repeat(2, 1fr); gap: 2.25rem 3rem; } }
+</style>

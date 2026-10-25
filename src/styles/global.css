@@ -187,7 +187,7 @@ blockquote footer { margin-top: 0.6rem; color: var(--mute); font-size: 0.95rem; 
 
 /* Process */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.75rem; counter-reset: step; }
-.steps li { counter-increment: step; display: grid; gap: 0.5rem; padding-top: 1rem; border-top: 3px solid var(--blue); }
+.steps li { counter-increment: step; display: grid; gap: 0.5rem; align-content: start; padding-top: 1rem; border-top: 3px solid var(--blue); }
 .steps li::before { content: counter(step); font-family: var(--font-head); font-weight: 700; font-size: 2.2rem; line-height: 1; color: var(--blue); }
 .steps p { color: var(--mute); }
 @media (min-width: 760px) { .steps { grid-template-columns: repeat(4, 1fr); gap: 2rem; } }
@@ -241,3 +241,13 @@ blockquote footer { margin-top: 0.6rem; color: var(--mute); font-size: 0.95rem; 
 .cta .contact-form .field label { color: #fff; }
 .cta .contact-form .fine { color: #cbd5e1; }
 .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+
+/* Page header with the same soft blue wash as the homepage hero */
+.page-head {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(rgba(31, 95, 191, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 95, 191, 0.07) 1px, transparent 1px),
+    linear-gradient(180deg, #dbeafe 0%, var(--paper) 75%);
+  background-size: 56px 56px, 56px 56px, 100% 100%;
+}
