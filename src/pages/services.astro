@@ -29,6 +29,23 @@ const supporting = services.filter((s) => s.tier === 'supporting');
     </div>
   </section>
 
+  <section class="terms">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Prices</p>
+        <h2>How our prices work</h2>
+        <p>Prices marked "From" are starting prices. You get a fixed written quote after we talk, before you pay anything.</p>
+      </div>
+      <ul class="terms-list">
+        <li><strong>Payment.</strong> The starter website is paid 40% to start, 30% at the review and 30% at handover. Starter automation is paid 50% to start and 50% at handover. <a href="/how-we-work/">See how payment works</a>.</li>
+        <li><strong>Not included.</strong> Domain renewal after the first year, paid tools and subscriptions, AI usage costs, and extra pages beyond the plan. We tell you these costs up front.</li>
+        <li><strong>Clients outside Uganda.</strong> We quote in US dollars, shown under each price.</li>
+        <li><strong>Founding clients.</strong> Our first five clients get 25% off their first project. We may ask to write a short case study about the work, but the discount does not depend on a review.</li>
+        <li><strong>Price changes.</strong> We may change our prices over time. A quote you have accepted keeps its price.</li>
+      </ul>
+    </div>
+  </section>
+
   <section class="process">
     <div class="wrap">
       <div class="section-head">
@@ -65,7 +82,7 @@ const supporting = services.filter((s) => s.tier === 'supporting');
         </details>
         <details name="faq">
           <summary>Do you give a quote before work starts?</summary>
-          <p>Yes. You get a written scope and quote first, and payment is split across milestones so you pay as work is delivered.</p>
+          <p>Yes. You get a written scope and a fixed quote first, and payment is split across milestones so you pay as work is delivered.</p>
         </details>
         <details name="faq">
           <summary>What happens after launch?</summary>
@@ -77,7 +94,7 @@ const supporting = services.filter((s) => s.tier === 'supporting');
         </details>
         <details name="faq">
           <summary>Do you work with clients outside Uganda?</summary>
-          <p>Yes. We work remotely with clients worldwide.</p>
+          <p>Yes. We work remotely with clients worldwide and quote them in US dollars.</p>
         </details>
       </div>
     </div>
@@ -97,6 +114,14 @@ const supporting = services.filter((s) => s.tier === 'supporting');
 </Base>
 
 <style>
+  .terms-list {
+    max-width: 760px;
+    margin: 0;
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.75rem;
+    line-height: 1.6;
+  }
   .faq-list {
     max-width: 760px;
     border-bottom: 1px solid #d5deeb;
