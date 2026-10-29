@@ -88,6 +88,7 @@ export const services: Service[] = [
     ],
     price: 'From UGX 250,000',
     priceUsd: 'From US$120 outside Uganda',
+    related: { label: 'Not sure yet? Get a free website review', href: '/free-audit/' },
     timeline: 'Agreed in writing after the audit',
     status: 'live',
   },

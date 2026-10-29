@@ -1,0 +1,41 @@
+---
+import { site } from '../data/site';
+const concernOptions = [
+  'It is slow',
+  'It is hard to use on a phone',
+  'It is not bringing in enquiries',
+  'It looks outdated',
+  'I am not sure',
+];
+---
+<form class="contact-form" action="/api/audit" method="post">
+  <div class="field">
+    <label for="af-name">Your name</label>
+    <input id="af-name" name="name" type="text" autocomplete="name" required maxlength="100" />
+  </div>
+  <div class="field">
+    <label for="af-contact">Email or WhatsApp number</label>
+    <input id="af-contact" name="contact" type="text" autocomplete="email" required maxlength="100" />
+  </div>
+  <div class="field">
+    <label for="af-site">Your website address</label>
+    <input id="af-site" name="site" type="text" inputmode="url" placeholder="yourbusiness.com" autocapitalize="none" required maxlength="200" />
+  </div>
+  <div class="field">
+    <label for="af-concern">What bothers you most about it?</label>
+    <select id="af-concern" name="concern">
+      {concernOptions.map((option) => <option value={option}>{option}</option>)}
+    </select>
+  </div>
+  <div class="field">
+    <label for="af-message">Anything else we should know? (optional)</label>
+    <textarea id="af-message" name="message" rows="4" maxlength="2000"></textarea>
+  </div>
+  <div class="hp" aria-hidden="true">
+    <label>Leave this field empty<input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
+  </div>
+  {site.turnstileSiteKey && <div class="cf-turnstile" data-sitekey={site.turnstileSiteKey}></div>}
+  <button class="btn btn-amber" type="submit">Request my free review</button>
+  <p class="fine">We reply within {site.replyTime}.</p>
+</form>
+{site.turnstileSiteKey && <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}

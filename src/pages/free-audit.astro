@@ -1,0 +1,87 @@
+---
+import Base from '../layouts/Base.astro';
+import AuditForm from '../components/AuditForm.astro';
+import { site } from '../data/site';
+---
+<Base
+  title={`Free website review | ${site.name}`}
+  description="Send us your website address and get a short written review of the biggest problems we find. Free, with no obligation."
+  path="/free-audit/"
+>
+  <section class="page-head">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Free</p>
+        <h1>Get a free review of your website</h1>
+        <p>Send us your website address. We look at it and send you a short written note on the biggest problems we find.</p>
+      </div>
+      <div class="audit-grid">
+        <div>
+          <h2>What we look at</h2>
+          <ul>
+            <li>How it looks and works on a phone</li>
+            <li>How fast it loads</li>
+            <li>Whether a visitor can easily contact you</li>
+            <li>Basic search setup (SEO), such as page titles and descriptions</li>
+          </ul>
+        </div>
+        <div>
+          <h2>What you get</h2>
+          <ul>
+            <li>A short written note, with the top problems we found</li>
+            <li>A plain explanation of why each one matters</li>
+            <li>No obligation. You can fix the problems yourself or ask us to</li>
+          </ul>
+        </div>
+      </div>
+      <p class="audit-note">
+        This is a short review, not our full audit. The full audit is part of
+        <a href="/services/">Improve your existing website</a>. It ranks every fix by priority and gives a price for each one.
+        If you hire us for the fixes, the audit fee is credited.
+      </p>
+    </div>
+  </section>
+
+  <section id="request" class="cta">
+    <div class="wrap cta-inner">
+      <h2>Request your free review</h2>
+      <p>It takes about a minute. We only use your details to reply to you.</p>
+      <AuditForm />
+      <div class="actions">
+        {site.whatsapp && <a class="btn btn-light" href={`https://wa.me/${site.whatsapp}`}>WhatsApp us instead</a>}
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .audit-grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+  .audit-grid h2 {
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem;
+  }
+  .audit-grid ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.4rem;
+  }
+  .audit-note {
+    max-width: 46rem;
+    margin: 2rem 0 0;
+    padding: 1rem 1.25rem;
+    border-left: 4px solid var(--accent);
+    background: #fff;
+    line-height: 1.6;
+  }
+  @media (min-width: 760px) {
+    .audit-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+  }
+</style>
