@@ -12,6 +12,7 @@ export type Service = {
   includes: string[];
   price: string;
   priceUsd?: string;
+  related?: { label: string; href: string };
   timeline: string;
   status: 'live' | 'coming-soon';
 };
@@ -30,6 +31,7 @@ export const services: Service[] = [
     ],
     price: 'From UGX 1,000,000',
     priceUsd: 'From US$600 outside Uganda',
+    related: { label: 'See related work: SokoNort', href: '/work/sokonort/' },
     timeline: 'Typically 1 to 2 weeks',
     status: 'live',
   },
@@ -49,6 +51,7 @@ export const services: Service[] = [
     ],
     price: 'From UGX 1,200,000',
     priceUsd: 'From US$700 outside Uganda',
+    related: { label: 'See related work: Sudd Library', href: '/work/sudd-library/' },
     timeline: 'Typically 2 to 3 weeks, once we have your content',
     status: 'live',
   },

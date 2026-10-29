@@ -1,12 +1,24 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { site } from '../../data/site';
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Work', item: `${site.url}/work/` },
+    { '@type': 'ListItem', position: 3, name: 'Sudd Library', item: `${site.url}/work/sudd-library/` },
+  ],
+};
 ---
 <Base
   title={`Sudd Library case study | ${site.name}`}
   description="Sudd Library is a free, open-source library of 80+ curriculum resources for South Sudanese teachers and students. Built and deployed by our founder."
   path="/work/sudd-library/"
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+  </Fragment>
   <section>
     <div class="wrap">
       <p class="eyebrow">Case study · Open-source product · Live</p>
@@ -19,11 +31,12 @@ import { site } from '../../data/site';
       </div>
       <div class="case-hero">
         <img
-          src="/case-studies/sudd-library/homepage.png"
+          src="/case-studies/sudd-library/homepage.webp"
           alt="Sudd Library homepage on a phone, with the library title and search."
-          width="720"
-          height="1612"
+          width="600"
+          height="1343"
           loading="eager"
+          fetchpriority="high"
         />
       </div>
     </div>
@@ -61,10 +74,10 @@ import { site } from '../../data/site';
       <div class="case-shots">
         <figure>
           <img
-            src="/case-studies/sudd-library/level.jpg"
+            src="/case-studies/sudd-library/level.webp"
             alt="Sudd Library Senior 4 page on a phone, listing 14 subjects grouped as STEM, Languages and Humanities, each with its number of files."
-            width="720"
-            height="1600"
+            width="600"
+            height="1343"
             loading="lazy"
           />
           <figcaption>A level page: Senior 4, with subjects grouped by area and the number of files in each.</figcaption>
@@ -177,7 +190,7 @@ import { site } from '../../data/site';
   <section class="cta">
     <div class="wrap cta-inner">
       <h2>Building something for learners in your community?</h2>
-      <p>We reply within {site.replyTime}.</p>
+      <p>We reply within {site.replyTime}. See <a href="/services/">what we offer and what it costs</a>.</p>
       <div class="actions">
         <a class="btn btn-amber" href="/contact/">Contact us</a>
         <a class="btn btn-light" href="/work/">Back to all work</a>

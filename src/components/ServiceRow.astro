@@ -11,6 +11,7 @@ const soon = service.status === 'coming-soon';
     </h3>
     <p>{service.tagline}</p>
     <p class="best-for">{service.bestFor}</p>
+    {service.related && <p class="related"><a href={service.related.href}>{service.related.label}</a></p>}
   </div>
   <ul>
     {service.includes.map((item) => <li>{item}</li>)}

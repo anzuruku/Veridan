@@ -6,12 +6,39 @@ import { site } from '../data/site';
 
 const core = services.filter((s) => s.tier === 'core');
 const supporting = services.filter((s) => s.tier === 'supporting');
+
+// Structured data for search engines, built from the same data as the page.
+const priceOf = (text: string) => Number((text.match(/[\d,]+/)?.[0] ?? '').replace(/,/g, '')) || undefined;
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: services
+    .filter((s) => s.status === 'live')
+    .map((s, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Service',
+        name: s.name,
+        description: s.tagline,
+        url: `${site.url}/services/`,
+        provider: { '@type': 'ProfessionalService', name: site.name, url: `${site.url}/` },
+        areaServed: 'Worldwide',
+        ...(priceOf(s.price) && {
+          offers: { '@type': 'Offer', priceCurrency: 'UGX', price: priceOf(s.price), description: s.price },
+        }),
+      },
+    })),
+};
 ---
 <Base
   title={`Services | ${site.name}`}
   description="Websites, AI agents and automation, and online admin. Each service has a written scope and a quote."
   path="/services/"
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  </Fragment>
   <section class="page-head">
     <div class="wrap">
       <div class="section-head">

@@ -16,6 +16,8 @@ const { title = `${site.name} | Websites, AI agents and automation`, description
     <meta name="theme-color" content="#0f172a" />
     {noindex && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={`${site.url}${path}`} />
+    <link rel="preload" href="/fonts/BricolageGrotesque-Variable.woff" as="font" type="font/woff" crossorigin />
+    <link rel="preload" href="/fonts/InstrumentSans-Variable.woff" as="font" type="font/woff" crossorigin />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -47,6 +49,7 @@ const { title = `${site.name} | Websites, AI agents and automation`, description
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`${site.url}/social/veridan-og.png`} />
     <meta name="twitter:image:alt" content="Veridan Digital: websites, AI agents and automation that keep working when the network doesn't." />
+    <slot name="head" />
     <style is:global>
       .eyebrow {
         font-size: 0.78rem;

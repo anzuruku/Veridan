@@ -1,12 +1,24 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { site } from '../../data/site';
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${site.url}/` },
+    { '@type': 'ListItem', position: 2, name: 'Work', item: `${site.url}/work/` },
+    { '@type': 'ListItem', position: 3, name: 'SokoNort', item: `${site.url}/work/sokonort/` },
+  ],
+};
 ---
 <Base
   title={`SokoNort case study | ${site.name}`}
   description="SokoNort is a local marketplace and delivery app for Adjumani District, Uganda. Built and deployed by our founder."
   path="/work/sokonort/"
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />
+  </Fragment>
   <section>
     <div class="wrap">
       <p class="eyebrow">Case study · Own product · Live, onboarding its first customers</p>
@@ -19,11 +31,12 @@ import { site } from '../../data/site';
       </div>
       <div class="case-hero">
         <img
-          src="/case-studies/sokonort/homepage.jpg"
+          src="/case-studies/sokonort/homepage.webp"
           alt="SokoNort homepage on a phone, showing the Adjumani District location, the SokoNort name and the Market and Real Estate cards."
-          width="720"
-          height="1600"
+          width="600"
+          height="1343"
           loading="eager"
+          fetchpriority="high"
         />
       </div>
     </div>
@@ -61,10 +74,10 @@ import { site } from '../../data/site';
       <div class="case-shots">
         <figure>
           <img
-            src="/case-studies/sokonort/categories.jpg"
+            src="/case-studies/sokonort/categories.webp"
             alt="SokoNort home screen cards for Market and Real Estate, with Local Vendors and Pay on Delivery tags."
-            width="720"
-            height="1600"
+            width="600"
+            height="1343"
             loading="lazy"
           />
           <figcaption>The Market and Real Estate cards on the home screen.</figcaption>
@@ -153,20 +166,20 @@ import { site } from '../../data/site';
       <div class="case-shots case-shots-two">
         <figure>
           <img
-            src="/case-studies/sokonort/about-mission.jpg"
+            src="/case-studies/sokonort/about-mission.webp"
             alt="SokoNort About screen: the local mission statement and the reasons to shop and sell on SokoNort, including Pay on Delivery and Strict Privacy Policy."
-            width="720"
-            height="1600"
+            width="600"
+            height="1343"
             loading="lazy"
           />
           <figcaption>The About screen: local mission and the main reasons to use SokoNort.</figcaption>
         </figure>
         <figure>
           <img
-            src="/case-studies/sokonort/about-coverage.jpg"
+            src="/case-studies/sokonort/about-coverage.webp"
             alt="SokoNort About screen: the SokoNort Guarantee, the list of sub-counties served and the Become a Vendor button."
-            width="720"
-            height="1600"
+            width="600"
+            height="1343"
             loading="lazy"
           />
           <figcaption>The About screen: the guarantee, coverage and how to become a vendor.</figcaption>
@@ -196,7 +209,7 @@ import { site } from '../../data/site';
   <section class="cta">
     <div class="wrap cta-inner">
       <h2>Building something for your own community?</h2>
-      <p>We reply within {site.replyTime}.</p>
+      <p>We reply within {site.replyTime}. See <a href="/services/">what we offer and what it costs</a>.</p>
       <div class="actions">
         <a class="btn btn-amber" href="/contact/">Contact us</a>
         <a class="btn btn-light" href="/work/">Back to all work</a>
