@@ -1,0 +1,22 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # Switch to `npm ci` once package-lock.json is committed.
+      - run: npm install
+      - run: npx astro check
+        continue-on-error: true
+      - run: npm run build
+      - run: npm audit --audit-level=high
+        continue-on-error: true
