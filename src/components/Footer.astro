@@ -23,7 +23,7 @@ const liveProducts = products.filter((p) => p.status === 'live');
         <nav aria-label="Products">
           <h2 class="fhead">Products</h2>
           <ul>
-            {liveProducts.map((p) => <li><a href={`/products/${p.slug}`}>{p.name}</a></li>)}
+            {liveProducts.map((p) => <li><a href={`/products/${p.slug}/`}>{p.name}</a></li>)}
           </ul>
         </nav>
       )}
@@ -48,7 +48,7 @@ const liveProducts = products.filter((p) => p.status === 'live');
     </div>
     <div class="fbottom">
       <p>&copy; {year} {site.name}. {site.location}</p>
-      <p><a href="/privacy">Privacy</a><a href="/terms">Terms</a></p>
+      <p><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></p>
     </div>
   </div>
 </footer>
