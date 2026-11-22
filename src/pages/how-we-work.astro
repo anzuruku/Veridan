@@ -5,8 +5,8 @@ import { site } from '../data/site';
 // Detail for each step. The short versions in site.process are used on the Services page.
 const steps = [
   {
-    title: 'Brief',
-    what: 'We agree what you need, the price and the timeline in writing.',
+    title: 'Diagnose and scope',
+    what: 'We find what is slowing your work down, then agree the scope, price and timeline in writing.',
     get: 'A written scope and quote.',
     need: 'Your goals, any logo or content you already have, and one person who can make decisions.',
     pay: 'First payment (40%) when you approve the scope.',
@@ -26,17 +26,17 @@ const steps = [
     pay: 'Second payment (30%) when the draft is ready for review.',
   },
   {
-    title: 'Launch',
-    what: 'We go live and hand over every file and login.',
-    get: 'The finished work, with all files and logins.',
+    title: 'Hand over',
+    what: 'We go live. At handover we transfer all accounts, files and logins, and show you how to run it.',
+    get: 'The finished work, with all accounts, files and logins, and a short walkthrough.',
     need: 'Your final approval.',
-    pay: 'Final payment (30%) on launch. Files and logins are handed over once it is paid.',
+    pay: 'Final payment (30%) at handover. Accounts, files and logins are transferred once it is paid.',
   },
 ];
 ---
 <Base
   title={`How we work | ${site.name}`}
-  description="Four steps from brief to launch, with payment split across milestones."
+  description="Four steps from diagnosis to handover, with payment split across milestones."
   path="/how-we-work/"
 >
   <section class="page-head">
@@ -72,7 +72,7 @@ const steps = [
         <p>The split above is for a Starter website. Other services follow the same idea, with fewer steps.</p>
       </div>
       <ul class="pay-list">
-        <li><strong>Starter website:</strong> 40% to start, 30% at review and 30% on launch.</li>
+        <li><strong>Starter website:</strong> 40% to start, 30% at review and 30% at handover.</li>
         <li><strong>Starter automation:</strong> 50% to start and 50% on handover.</li>
         <li><strong>Improve your existing website:</strong> the audit is paid first, then the fixes are paid in stages.</li>
         <li><strong>Monthly admin plan and website care contract:</strong> paid in advance.</li>

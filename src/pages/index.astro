@@ -33,6 +33,17 @@ const liveProjects = projects.filter((p) => p.live);
   <section>
     <div class="wrap">
       <div class="section-head">
+        <p class="eyebrow">Why offline-first</p>
+        <h2>Built for places where the network fails</h2>
+        <p>{site.placeStory}</p>
+        <p>{site.handover}</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
         <p class="eyebrow">Work</p>
         <h2>Work we have built</h2>
         <p>{liveProjects.length} live projects, built and deployed by our founder.</p>
@@ -48,7 +59,7 @@ const liveProjects = projects.filter((p) => p.live);
 
   <section class="cta">
     <div class="wrap cta-inner">
-      <h2>Tell us what you want to build.</h2>
+      <h2>Tell us what is slowing your work down.</h2>
       <p>We reply within {site.replyTime}.</p>
       <div class="actions">
         <a class="btn btn-amber" href="/contact/">Contact us</a>
