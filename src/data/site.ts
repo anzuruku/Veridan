@@ -1,15 +1,21 @@
 // Everything the whole site needs to know about the business lives here.
-// To rename the agency, change `name` and `shortName`. Nothing else is hard-coded.
+// To rename the business, change `brand` and `shortName`. The descriptions below follow it.
+
+const brand = 'Veridan Digital';
 
 export const site = {
-  name: 'Veridan Digital',
+  name: brand,
   shortName: 'Veridan',
   url: 'https://veridandigital.pages.dev', // the live address, no trailing slash. Update when the domain changes.
   headline: "Websites, AI agents and automation that keep working when the network doesn't.",
-  subhead:
-    'Veridan Digital is a small remote team. We build, launch and run the online side of your business, from your website to an assistant that answers customers while you are offline.',
-  description:
-    'Veridan Digital builds websites, AI agents and automation for businesses, and runs the online admin that keeps them moving. Based in Uganda, working worldwide.',
+  subhead: `${brand} is founder-led. We find what is slowing your work down, then build or arrange the fix, from your website to an assistant that answers customers while you are offline.`,
+  description: `${brand} is a founder-led technology consultancy based in Uganda. We help businesses and schools find what is slowing their work down and put practical systems in place: websites, AI agents, automation and online admin.`,
+  placeStory:
+    'We build from a border town where connections drop and power cuts are normal, so what we make is built to keep working.',
+  handover:
+    'You own what you pay for. At handover we transfer all accounts, files and logins, and show you how to run it.',
+  teamLine:
+    'We are founder-led. You deal directly with the founder, and we bring in specialists when a project needs them.',
   location: 'Based in Uganda, working worldwide.',
   email: 'jacobanzuruku@gmail.com', // temporary. Replace with a business email once the domain is bought.
   whatsapp: '256761634749', // digits only with country code. Leave empty to hide the button.
@@ -32,9 +38,9 @@ export const site = {
     'Pay in milestones, as work is delivered',
   ],
   process: [
-    { title: 'Brief', text: 'We agree what you need, the price and the timeline in writing.' },
+    { title: 'Diagnose and scope', text: 'We find what is slowing your work down, then agree the scope, price and timeline in writing.' },
     { title: 'Build', text: 'You see progress at each milestone, not just at the end.' },
     { title: 'Review', text: 'You ask for changes before anything is final.' },
-    { title: 'Launch', text: 'We go live and hand over every file and login.' },
+    { title: 'Hand over', text: 'We go live. At handover we transfer all accounts, files and logins, and show you how to run it.' },
   ],
 };
