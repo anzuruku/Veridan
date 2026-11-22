@@ -84,7 +84,7 @@ export async function sendEmail(
       },
       body: JSON.stringify({
         // Until a domain is verified in Resend, this sender only delivers to the account owner's address.
-        from: 'Veridan Digital <onboarding@resend.dev>',
+        from: `${site.name} <onboarding@resend.dev>`,
         to: [mail.to],
         reply_to: EMAIL_PATTERN.test(mail.replyTo) ? mail.replyTo : undefined,
         subject: mail.subject,

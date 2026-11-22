@@ -1,4 +1,4 @@
-// Products are things Veridan Digital builds and runs itself.
+// Products are things Veridan builds and runs itself.
 // Only add an entry once it is live. The footer shows only status: 'live' items.
 export type Product = {
   slug: string;
