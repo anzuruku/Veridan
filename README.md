@@ -1,4 +1,4 @@
-# Veridan Digital website
+# Veridan Consulting website
 
 Astro static site, built for Cloudflare Pages.
 
@@ -29,7 +29,7 @@ The code checks the honeypot, the request origin and the body size. It does not 
 - `src/styles/global.css`     colors and fonts at the top of the file
 
 ## To rename the agency
-Change `name` and `shortName` in `src/data/site.ts`, update the domain in `astro.config.mjs`, and replace `public/favicon.svg` if the logo changes.
+Change `brand` and `shortName` at the top of `src/data/site.ts`; the descriptions, logo text, page titles and email sender follow it. Also update `url` in the same file when the domain changes, and re-render the three images with the name on them: `public/social/veridan-og.png`, `veridan-banner-wide.png` and `veridan-banner-linkedin.png`. The X mark, favicon and icons carry no name and stay as they are.
 
 ## Version 0.1.0
 - Palette: navy, blue, orange accent, dark orange for small text, cyan highlight (see `:root` in `src/styles/global.css`).

@@ -1,7 +1,7 @@
 // Everything the whole site needs to know about the business lives here.
 // To rename the business, change `brand` and `shortName`. The descriptions below follow it.
 
-const brand = 'Veridan Digital';
+const brand = 'Veridan Consulting';
 
 export const site = {
   name: brand,
