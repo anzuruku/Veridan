@@ -1,7 +1,7 @@
 // Everything the whole site needs to know about the business lives here.
 // To rename the business, change `brand` and `shortName`. The descriptions below follow it.
 
-const brand = 'Veridan Consulting';
+const brand = 'Veridan Digital';
 
 export const site = {
   name: brand,
@@ -9,7 +9,7 @@ export const site = {
   url: 'https://veridandigital.pages.dev', // the live address, no trailing slash. Update when the domain changes.
   headline: "Websites, AI agents and automation that keep working when the network doesn't.",
   subhead: `${brand} is founder-led. We find what is slowing your work down, then build or arrange the fix, from your website to an assistant that answers customers while you are offline.`,
-  description: `${brand} is a founder-led technology consultancy based in Uganda. We help businesses and schools find what is slowing their work down and put practical systems in place: websites, AI agents, automation and online admin.`,
+  description: `${brand} is a founder-led digital consultancy based in Uganda. We help businesses and schools find what is slowing their work down and put practical systems in place: websites, AI agents, automation and online admin.`,
   placeStory:
     'We build from a border town where connections drop and power cuts are normal, so what we make is built to keep working.',
   handover:
