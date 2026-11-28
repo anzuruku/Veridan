@@ -13,7 +13,7 @@ export const team: Member[] = [
     name: 'Anzuruku Jacob',
     role: 'Founder and developer',
     photo: '/team/jacob.webp',
-    bio: 'Full-stack developer. He uses modern tools to build faster, and designs, builds and deploys every system he works on himself. He built and launched Sudd Library and SokoNort.',
+    bio: 'Full-stack developer. He uses modern tools to build faster, and designs, builds and deploys every system he works on himself. He built and deployed Sudd Library and SokoNort.',
     links: [
       { label: 'GitHub', url: 'https://github.com/anzuruku' },
       { label: 'LinkedIn', url: 'https://www.linkedin.com/in/anzuruku-jacob' },

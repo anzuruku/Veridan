@@ -1,4 +1,4 @@
-# Veridan Consulting website
+# Veridan Digital website
 
 Astro static site, built for Cloudflare Pages.
 

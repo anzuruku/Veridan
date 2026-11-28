@@ -22,7 +22,7 @@ export const projects: Project[] = [
     live: true,
     status: 'Live',
     summary:
-      'A free, open-source library of 80+ curriculum resources for South Sudanese schools, built to work offline and on weak connections.',
+      'A free, open-source library of 95 curriculum resources and still growing for South Sudanese schools, built to work offline and on weak connections.',
     facts: [
       'Offline-first progressive web app',
       'Built to the WCAG AA accessibility standard; not yet formally tested against it',
@@ -38,7 +38,7 @@ export const projects: Project[] = [
     name: 'SokoNort',
     type: 'Own product',
     live: true,
-    status: 'Live, onboarding its first customers',
+    status: 'Built and tested end to end',
     summary:
       'A local marketplace and delivery app for Adjumani, Uganda, with Mobile Money payments and an AI customer-care assistant.',
     facts: [
